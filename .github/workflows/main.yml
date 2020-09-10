@@ -17,7 +17,7 @@ jobs:
         with:
           output_file_path: i18n/source.csv
       
-      - name: Upload translations
+      - name: Sync
         uses: crowdin/github-action@1.0.9
         with:
           upload_translations: true
@@ -28,3 +28,5 @@ jobs:
           translation: i18n/%locale_with_underscore%.csv
           upload_language: en-US
           crowdin_branch_name: ${{ github.event.repository.name }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
