@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches: [ 2.x ]
+
+jobs:
+  translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+    
+      - uses: Szpadel/magento-l18n-extractor-action
+        with:
+          output_file_path: i18n/en_us.csv
