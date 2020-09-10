@@ -9,8 +9,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-    
-      - uses: Szpadel/magento-l18n-extractor-action@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Extract translations
+        uses: Szpadel/magento-l18n-extractor-action@v1
         with:
           output_file_path: i18n/en_us.csv
+      
+      - name: Upload translations
+        uses: crowdin/github-action@1.0.9
+        with:
+          upload_translations: true
+          project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
+          token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+          translation: i18n/en_us.csv
+          upload_language: en_us
