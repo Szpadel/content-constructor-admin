@@ -25,5 +25,5 @@ jobs:
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
           source: i18n/en_us.csv
           translation: i18n/%locale%.csv
-          upload_language: en_us
-          base_path: content-constructor-admin
+          upload_language: en-US
+          crowdin_branch_name: ${{ github.repository }}
