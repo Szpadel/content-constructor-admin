@@ -26,3 +26,4 @@ jobs:
           source: i18n/en_us.csv
           translation: i18n/%locale%.csv
           upload_language: en_us
+          base_path: content-constructor-admin
