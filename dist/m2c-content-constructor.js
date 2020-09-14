@@ -309,7 +309,7 @@ var CcCategoryPicker = (function () {
             placeholders: {
                 select: $t('Select...'),
                 doneButton: $t('Done'),
-                search: $t('Type category name to search...'),
+                search: $t('Type category name to search test test test...'),
                 empty: $t('There are no categories matching your selection'),
                 removeCrumb: $t('Remove this category'),
             },
