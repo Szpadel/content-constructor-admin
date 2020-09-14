@@ -25,5 +25,6 @@ jobs:
           token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
           config: crowdin.yml
           crowdin_branch_name: ${{ github.event.repository.name }}
+          pull_request_title: "Update translations"
         env:
           GITHUB_TOKEN: ${{ github.token }}
